@@ -15,8 +15,9 @@ public class WechatpushApplication {
     }
 
 
-    @Scheduled(cron = "0 30 7 * * ?")
-    public void goodMorning(){
+    @Scheduled(cron = "0 0 9 * * ?")//每天9点执行
+    //@Scheduled(cron = "*/10 * * * * ?") //测试，每五秒钟执行一次
+    public static void goodMorning() {
         Pusher.push();
     }
 

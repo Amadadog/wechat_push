@@ -13,14 +13,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author cVzhanshi
- * @create 2022-08-04 22:58
- */
 public class CaiHongPiUtils {
-
+    //彩虹屁
     public static String getCaiHongPi() {
-        String httpUrl = "http://api.tianapi.com/caihongpi/index?key=id";
+        //个人key配置
+        String httpUrl = "http://api.tianapi.com/caihongpi/index?key=你自己注册后的个人key";
         BufferedReader reader = null;
         String result = null;
         StringBuffer sbf = new StringBuffer();
@@ -47,9 +44,9 @@ public class CaiHongPiUtils {
         String content = newslist.getJSONObject(0).getString("content");
         return content;
     }
-
+    //中文英文句
     public static Map<String,String> getEnsentence() {
-        String httpUrl = "http://api.tianapi.com/ensentence/index?key=id";
+        String httpUrl = "http://api.tianapi.com/ensentence/index?key=key=你自己注册后的个人key";
         BufferedReader reader = null;
         String result = null;
         StringBuffer sbf = new StringBuffer();

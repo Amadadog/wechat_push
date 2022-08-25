@@ -5,26 +5,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * @author cVzhanshi
- * @create 2022-08-04 22:58
- */
 public class JiNianRiUtils {
 
     public static int getLianAi(){
-        return calculationLianAi("2021-11-06");
+        return calculationLianAi("2019-07-07");
     }
-    public static int getBirthday_Jo(){
+    public static int getBirthday_Yang(){
         try {
-            return calculationBirthday("2001-11-16");
+            return calculationBirthday("2001-06-10");
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return 0;
     }
-    public static int getBirthday_Hui(){
+    public static int getBirthday_Gao(){
         try {
-            return calculationBirthday("2000-09-11");
+            return calculationBirthday("2001-10-09");
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -34,10 +30,14 @@ public class JiNianRiUtils {
 
     public static int calculationBirthday(String clidate) throws ParseException {
         SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar cToday = Calendar.getInstance(); // 存今天
-        Calendar cBirth = Calendar.getInstance(); // 存生日
-        cBirth.setTime(myFormatter.parse(clidate)); // 设置生日
-        cBirth.set(Calendar.YEAR, cToday.get(Calendar.YEAR)); // 修改为本年
+        // 存今天
+        Calendar cToday = Calendar.getInstance();
+        // 存生日
+        Calendar cBirth = Calendar.getInstance();
+        // 设置生日
+        cBirth.setTime(myFormatter.parse(clidate));
+        // 修改为本年
+        cBirth.set(Calendar.YEAR, cToday.get(Calendar.YEAR));
         int days;
         if (cBirth.get(Calendar.DAY_OF_YEAR) < cToday.get(Calendar.DAY_OF_YEAR)) {
             // 生日已经过了，要算明年的了
